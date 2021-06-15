@@ -43,3 +43,29 @@ def scrape():
     # Convert to html string & clean
     html_facts = facts.to_html()
     html_facts = html_facts.replace('\n', '')
+
+    # Mars Hemispheres
+    # Set up for retriving browser
+    hemi_url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
+    browser.visit(hemi_url)
+    html = browser.html
+    hemi_soup = bs(html, 'html.parser')
+    # Set up for dictionaries
+    hemis_image_urls = []
+    # Original url for images
+    base_img_url ='https://astrogeology.usgs.gov/'
+    # Soup set up
+    hemis = hemi_soup.find_all('div', class_='item')
+    # Loop set up for each title and image
+    for hemi in hemis:
+        title = hemi.find('h3').text
+        browser.click_link_partial_text("Hemispher Enhanced")
+        img_html = browser.html
+        img_soup = bs(img_html, 'html.parser')
+        imgs_url = img_soup.find('img', class_="wide-image")['src']
+        image_url = base_img_url+imgs_url
+        hemis_image_urls.append({"title": title, "image_url": image_url})
+
+    # Close browser after scraping
+    browser.quit()
+    
