@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mission to Mars</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
   <style>
       #toppage{
     background: url("https://www.science.org.au/curious/sites/default/files/article-banner-image/2-mars-banner.jpg") center center / cover no-repeat;}
@@ -54,8 +54,8 @@
           <div class="media-body" style="text-align:center;">
             <div class="boxed">
             <h2><b>Latest Mars News</b></h2>
-            <h4 class="media-heading"><b>{{ <indexlink class="Mars_News_Headline"></indexlink> }}</b></h4>
-            <h5><p>{{ <indexlink class="Mars_News_Tease"></indexlink> }}</p></h5>
+            <h4><b>{{indexlink.Mars_news_headline}}</b></h4>
+            <h5><p>{{ indexlink.Mars_News_Tease }}</p></h5>
             <h5><a class="nav-link" href="https://mars.nasa.gov/news/" target="_blank" style="color: darkred;" >- Click here for Mars News Website -</a></h5>
             </div>
             <br>
@@ -77,7 +77,7 @@
       <div class="col-md-4">
         <h2><b>Mars Facts</b></h2>
         <div class="box">
-          {{ <indexlink class="Mars_Facts"></indexlink> | safe }}
+          {{ indexlink.Mars_Facts | safe }}
         </div>
       </div>
     </div>
@@ -91,7 +91,7 @@
             <h4 class="text-center"><b>These images are mosics of various hemispheres of Mars projected into point perspecitve. This is a view similar to which one would see from a spacecraft. </b></h4>
             <h5 style="text-align:center;"><a class="nav-link" href="https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars" target="_blank" style="color: darkred;" >- Click here to learn more about each image -</a></h5>
           </div>
-          {% for hemisphere in <indexlink class="Mars_Hemispheres"></indexlink> %}
+          {% for hemisphere in indexlink.Mars_Hemispheres %}
           <div class="col-md-6" >
               <div class="thumbnail" >
                 <img src="{{hemisphere.img_url}}" alt="Hemisphere" width="800" height="800">
