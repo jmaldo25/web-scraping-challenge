@@ -82,3 +82,27 @@
       </div>
     </div>
   </div>
+
+      <!-- Mars hemispheres-->
+      <div class='container-fluid' >
+        <div class="row" style="margin-top:80px;">
+          <div class="page-header">
+            <h2 class="text-center"><b>Mars Hemispheres Images</b></h2>
+            <h4 class="text-center"><b>These images are mosics of various hemispheres of Mars projected into point perspecitve. This is a view similar to which one would see from a spacecraft. </b></h4>
+            <h5 style="text-align:center;"><a class="nav-link" href="https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars" target="_blank" style="color: darkred;" >- Click here to learn more about each image -</a></h5>
+          </div>
+          {% for hemisphere in <indexlink class="Mars_Hemispheres"></indexlink> %}
+          <div class="col-md-6" >
+              <div class="thumbnail" >
+                <img src="{{hemisphere.img_url}}" alt="Hemisphere" width="800" height="800">
+                <div class="caption">
+                    <h3 class="text-center"><b>{{hemisphere.title}}</b></h3>
+                </div>
+              </div>
+          </div>
+          {% endfor %}
+    
+        </div>
+      </div>
+    </body>
+    </html>
