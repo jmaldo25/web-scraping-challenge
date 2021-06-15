@@ -71,11 +71,11 @@ def scrape():
     
     # Creating dictionary for all of the scrapped info
     mars_dic={
-        "Mars News Headline": news_title,
-        "Mars News Tease": news_p,
-        "Featured Mars Image": "N/A",
-        "Mars Facts": html_facts,
-        "Mars Hemispheres": hemis_image_urls,
+        "Mars_News_Headline": news_title,
+        "Mars_News_Tease": news_p,
+        "Featured_Mars_Image": "N/A",
+        "Mars_Facts": html_facts,
+        "Mars_Hemispheres": hemis_image_urls,
     }
     return mars_dic
 

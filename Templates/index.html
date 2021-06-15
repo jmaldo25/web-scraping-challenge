@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+      #toppage{
+    background: url("https://www.science.org.au/curious/sites/default/files/article-banner-image/2-mars-banner.jpg") center center / cover no-repeat;}
+
+    .btn{
+    color:white;
+    background-color:rgb(216, 67, 67);
+    border-color:white;}
+
+    .btn:hover{
+    border-color: white;
+    background-color: darkred;}
+
+    .container-fluid{
+    background-color: lightgray;}
+
+    .boxed{
+    border: 1px solid black;
+    background-color: white;
+    width: 80%;
+    margin:auto;}
+
+    .box{
+    background-color: white;
+    width: fit-content;}
+
+    figure, img {
+        img {
+        @extend .img-fluid;}
+  </style>
+</head>
+
+<body>
+    <!-- Container for the title and scraper button -->
+    <div class="container-fluid" >
+      <div class="jumbotron text-center" id="toppage">
+        <h1 style='color:white'><b>Mission to Mars</b></h1>
+        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+      </div>
+    </div>
+
+      <!-- Latest Mars news --> 
+  <div class='container-fluid'>
+    <div class="row justify-content-center">
+      <div class="col-md-12">
+        <div class="media">
+          <div class="media-body" style="text-align:center;">
+            <div class="boxed">
+            <h2><b>Latest Mars News</b></h2>
+            <h4 class="media-heading"><b>{{ <indexlink class="Mars_News_Headline"></indexlink> }}</b></h4>
+            <h5><p>{{ <indexlink class="Mars_News_Tease"></indexlink> }}</p></h5>
+            <h5><a class="nav-link" href="https://mars.nasa.gov/news/" target="_blank" style="color: darkred;" >- Click here for Mars News Website -</a></h5>
+            </div>
+            <br>
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='container-fluid' >
+    <div class="row" >
