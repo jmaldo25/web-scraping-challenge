@@ -34,9 +34,6 @@
     background-color: white;
     width: fit-content;}
 
-    figure, img {
-        img {
-        @extend .img-fluid;}
   </style>
 </head>
 
@@ -71,3 +68,17 @@
 
   <div class='container-fluid' >
     <div class="row" >
+      <!-- Featured Mars image -->
+      <div class="col-md-8">
+        <h2><b>Current Featured Mars Image</b></h2>
+        <img src="{{ indexlink.Featured_mars_image }}" alt="Mars" class="img-fluid img-responsive">
+      </div>
+        <!-- Mars facts -->
+      <div class="col-md-4">
+        <h2><b>Mars Facts</b></h2>
+        <div class="box">
+          {{ <indexlink class="Mars_Facts"></indexlink> | safe }}
+        </div>
+      </div>
+    </div>
+  </div>
