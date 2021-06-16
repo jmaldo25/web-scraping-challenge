@@ -12,7 +12,6 @@ mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_app")
 @app.route("/")
 def index():
     mars_data = mongo.db.mars.find_one()
-    print(mars_data)
     return render_template("index.html", indexlink=mars_data)
 
 # Route that will trigger the scrape function
@@ -20,7 +19,7 @@ def index():
 def scrape():
     mars_scrape = scrape_mars.scrape()
     mongo.db.mars.update({}, mars_scrape, upsert=True)
-    
+    # return "Scraping Successful!"
     
     # Redirect to home page
     return redirect("/")

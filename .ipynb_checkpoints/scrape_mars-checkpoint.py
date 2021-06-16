@@ -25,7 +25,7 @@ def scrape():
     news_p = mysoup.find("li", class_="slide").find("div", class_="article_teaser_body").text
 
     # Mars Images define and retrive
-    # image_url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
+    image_url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
     # web page gives 404 Error
 
 
@@ -77,7 +77,7 @@ def scrape():
         "Mars_Facts": html_facts,
         "Mars_Hemispheres": hemis_image_urls,
     }
-    # mars_dic = "Hello World"
+    mars_dic = "Hello World"
     return mars_dic
 
 if __name__ == "__main__":
